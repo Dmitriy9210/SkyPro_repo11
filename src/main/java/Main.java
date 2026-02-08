@@ -13,13 +13,17 @@ public class Main {
         System.out.println("Exersice2");
         int clientOS = 1;
         short clientDeviceYear = 2013;
-        whauUseApp(clientOS, clientDeviceYear);
+        determineAppVersion(clientOS, clientDeviceYear);
         System.out.println("_________________________");
 
         System.out.println("Exersice3");
         short deliveryDistance = 100;
         byte days = daysDelivery(deliveryDistance);
-        System.out.printf("Потребуется дней: %s день доставки%n", days);
+        if(days > 0){
+          System.out.printf("Потребуется дней: %s день доставки%n", days);
+        }else{
+          System.out.println("Доставка не осуществляется");
+        }
         System.out.println("_________________________");
     }
 
@@ -27,7 +31,7 @@ public class Main {
         return ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0));
     }
 
-    static void whauUseApp(int clientOS, short clientDeviceYear) {
+    static void determineAppVersion(int clientOS, short clientDeviceYear) {
         if (clientOS == 1 && clientDeviceYear >= 2015) {
             System.out.println("Установите версию приложения для Android по ссылке");
         } else if (clientOS == 0 && clientDeviceYear >= 2015) {
@@ -52,7 +56,7 @@ public class Main {
             days += 2;
             return days;
         } else {
-            throw new RuntimeException("Доставка карт не состоится");
+            return 0;
         }
     }
 

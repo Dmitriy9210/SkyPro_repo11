@@ -19,10 +19,10 @@ public class Main {
         System.out.println("Exersice3");
         short deliveryDistance = 100;
         byte days = daysDelivery(deliveryDistance);
-        if(days > 0){
-          System.out.printf("Потребуется дней: %s день доставки%n", days);
-        }else{
-          System.out.println("Доставка не осуществляется");
+        if (days > 0) {
+            System.out.printf("Потребуется дней: %s день доставки%n", days);
+        } else {
+            System.out.println("Доставка не осуществляется");
         }
         System.out.println("_________________________");
     }

@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -12,7 +14,7 @@ public class Main {
 
         System.out.println("Exersice2");
         int clientOS = 1;
-        short clientDeviceYear = 2013;
+        short clientDeviceYear = 2026;
         determineAppVersion(clientOS, clientDeviceYear);
         System.out.println("_________________________");
 
@@ -32,13 +34,14 @@ public class Main {
     }
 
     static void determineAppVersion(int clientOS, short clientDeviceYear) {
-        if (clientOS == 1 && clientDeviceYear >= 2015) {
+        int currentYear = LocalDate.now().getYear();
+        if (clientOS == 1 && clientDeviceYear >= currentYear) {
             System.out.println("Установите версию приложения для Android по ссылке");
-        } else if (clientOS == 0 && clientDeviceYear >= 2015) {
+        } else if (clientOS == 0 && clientDeviceYear >= currentYear) {
             System.out.println("Установите версию приложения для iOS по ссылке");
-        } else if (clientOS == 1 && clientDeviceYear < 2015) {
+        } else if (clientOS == 1 && clientDeviceYear < currentYear) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        } else if (clientOS == 0 && clientDeviceYear < 2015) {
+        } else if (clientOS == 0 && clientDeviceYear < currentYear) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
         } else {
             System.out.println("Не правильно выбрана платформа или год выпуска телефона");
